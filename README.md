@@ -7,9 +7,9 @@ The "College Attendance System" is a powerful web application designed to effect
 
 The application offers several convenient features such as a tab to clean and prepare the dataset, another tab for building a support vector machine (SVM) model to accurately classify student/teacher faces, and a real-time attendance tab for taking attendance during classes.
 
-The attendance records are stored in both JSON and CSV formats, making it easy to view and analyze the data.With plans to integrate MongoDB in the future for efficient data storage. Additionally, the system provides an attendance analysis tab that allows users to review attendance data and generate reports.
+The attendance records are stored in both sqlite and CSV formats, making it easy to view and analyze the data.With plans to integrate MongoDB in the future for efficient data storage. Additionally, the system provides an attendance analysis tab that allows users to review attendance data and generate reports.
 
-By leveraging advanced technologies such as streamlit, mediapipe and google facenet , the College Attendance System offers an accurate and efficient way to track attendance. With its automated attendance tracking capabilities, this system can help colleges comply with regulations, maintain accurate records, and improve overall efficiency.
+By leveraging advanced technologies such as streamlit, single-shot detector (SSD)  and google facenet , the College Attendance System offers an accurate and efficient way to track attendance. With its automated attendance tracking capabilities, this system can help colleges comply with regulations, maintain accurate records, and improve overall efficiency.
 
 
 This application is built using Python 3.10 .
