@@ -30,7 +30,6 @@ pip install -r requirements.txt
 ## Download unknow.csv file
 
 
-
 ## Homepage
 ![](https://github.com/p-p-p-p/college-attendance-system/blob/main/images/homepage.png)
 ## Registration
@@ -38,6 +37,8 @@ pip install -r requirements.txt
 ![](https://github.com/p-p-p-p/college-attendance-system/blob/main/images/registration.png)
 ## Realtime attendance for every subject
 ![](https://github.com/p-p-p-p/college-attendance-system/blob/main/images/real.png)
+## Sending confirmation mail in realtime
+![](https://github.com/p-p-p-p/college-attendance-system/blob/main/images/confirmation.jpg)
 ## Clean dataset and train model
 ![](https://github.com/p-p-p-p/college--attendance-system/blob/main/images/4.png)
 
@@ -47,3 +48,5 @@ pip install -r requirements.txt
 
 ## Send attendance records to teacher.
 ![](https://github.com/p-p-p-p/college-attendance-system/blob/main/images/send.png)
+## Received Excel file by mail
+![](https://github.com/p-p-p-p/college-attendance-system/blob/main/images/attend.jpg)
