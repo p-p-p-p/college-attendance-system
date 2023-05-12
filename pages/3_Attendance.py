@@ -208,8 +208,8 @@ def video_capture(subject):
                     name, branch_name, designation, email=info
                     att=mark_attendance(int(person_id), name, branch_name, designation, subject)
                     if att:
-                        run_attendance_email(id_number=int(person_id), name=name, branch_name=branch_name, designation=designation, email=send_mail, subject=subject)
-                        # run_attendance_email(id_number=int(person_id), name=name, branch_name=branch_name, designation=designation, email=email, subject=subject)
+#                         run_attendance_email(id_number=int(person_id), name=name, branch_name=branch_name, designation=designation, email=send_mail, subject=subject)
+                        run_attendance_email(id_number=int(person_id), name=name, branch_name=branch_name, designation=designation, email=email, subject=subject)
 
                     # print(f"Name: {name}, Branch: {branch_name}, Designation: {designation}")
                     draw_img=drawBox(img, x1, y1, x2, y2, l=l, t=5, rt=1, text=name, id=str(person_id),display_id=True,draw_rect=True,color=(2, 240, 228),text_color=(255,255,255))
