@@ -24,6 +24,11 @@ This application is built using Python 3.10 .
 ```
 pip install -r requirements.txt
 ```
+
+####  Step 4: Run app.py
+```
+streamlit run app.py
+```
 ## Generate Unknown face class
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/p-p-p-p/college-attendance-system/blob/main/unknown_face.ipynb)
 
