@@ -28,6 +28,10 @@ or
 ```
 Run install.py
 ```
+annd
+```
+rull download.py
+```
 
 ####  Step 4: Run app.py
 ```
