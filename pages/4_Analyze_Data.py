@@ -26,8 +26,8 @@ df.to_excel("attendance_report.xlsx", index=False)
 
 # Show the attendance data in the Streamlit app
 st.write("Attendance Data")
-st.write(df.head())
-
+# st.write(df.head())
+st.write(df)
 # Get the total number of students in the attendance data
 num_students = len(df['name'].unique())
 
