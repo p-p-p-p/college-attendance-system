@@ -144,15 +144,16 @@ def time_count(img,num_seconds):
     return img
 
     
-
+import os 
 def video_capture(name,id_number,branch_name,designation):
     cap = cv2.VideoCapture(0)
+    # cap = cv2.VideoCapture("./videos/2.mp4")
     pTime = 0
     FRAME_WINDOW = st.image([]) 
     t0=time.time()
     while True:
         ret, img = cap.read()
-        img=cv2.flip(img,1)
+        # img=cv2.flip(img,1)
         faces,facial_data=deep_data_extract(img)
         show_img=white_overlay(img)
         
@@ -281,16 +282,16 @@ def is_valid_email(email):
         return False
 import re
 
-def is_valid_email(email):
-    # regex pattern for email validation
-    pattern = r'^([a-zA-Z0-9_.+-]+)@([a-zA-Z0-9-]+\.)+([a-zA-Z0-9]{2,})$'
-    # match the pattern with the email
-    match = re.match(pattern, email)
-    # if match is found, email is valid
-    if match:
-        return True
-    else:
-        return False
+# def is_valid_email(email):
+#     # regex pattern for email validation
+#     pattern = r'^([a-zA-Z0-9_.+-]+)@([a-zA-Z0-9-]+\.)+([a-zA-Z0-9]{2,})$'
+#     # match the pattern with the email
+#     match = re.match(pattern, email)
+#     # if match is found, email is valid
+#     if match:
+#         return True
+#     else:
+#         return False
 def check_email(email):
     try:
         conn = sqlite3.connect("name.sqlite")
@@ -309,10 +310,10 @@ def check_email(email):
     
 form = st.form(key='my-form')
 name = form.text_input('Enter your name')
-id_number = form.number_input("Enter ID number", value=0, step=1)
+id_number = form.number_input("Enter ID number", value=1, step=1)
 branch_name = form.text_input('Enter Branch Name')
 designation = form.selectbox("Designation", ("Student", "Teacher"))
-email = form.text_input('Enter Branch email')
+email = form.text_input('Enter your email')
 submit = form.form_submit_button('Submit')
 
 st.caption('You have only :blue[30 seconds] to scan yourself')
