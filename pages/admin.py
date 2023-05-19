@@ -17,6 +17,14 @@ def create_database():
     conn2.commit()
     conn2.close()
 
+    conn3 = sqlite3.connect('attendance.sqlite')
+    c3 = conn3.cursor()
+    c3.execute('''CREATE TABLE IF NOT EXISTS attendance
+                (date TEXT, subject TEXT, id_number INTEGER, time TEXT, name TEXT, branch_name TEXT, designation TEXT,
+                PRIMARY KEY (date, subject, id_number))''')
+    conn3.commit()
+    conn3.close()
+
 create_database()
 
 # Check if data exists in name.sqlite file
@@ -47,7 +55,7 @@ else:
     # Take input from user (comma-separated id numbers to delete)
     delete_ids_input = st.text_input("Enter ID number(s) to delete (comma-separated)", "")
 
-    # Delete id numbers and corresponding records from name.sqlite
+    # Delete id numbers and corresponding records from name.sqlite and attendance.sqlite
     if delete_ids_input:
         delete_ids = [int(id.strip()) for id in delete_ids_input.split(",")]
 
@@ -65,9 +73,14 @@ else:
             conn1.commit()
             conn1.close()
 
+            conn3 = sqlite3.connect("attendance.sqlite")
+            c3 = conn3.cursor()
+            c3.execute("DELETE FROM attendance WHERE id_number IN ({})".format(",".join("?" * len(delete_ids))), delete_ids)
+            conn3.commit()
+            conn3.close()
+
             st.success("Deleted ID number(s) and corresponding records successfully.")
 
         # Button to trigger the deletion process
         if st.button("Delete Records"):
             delete_records()
-
