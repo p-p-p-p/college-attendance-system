@@ -50,6 +50,18 @@ st.dataframe(df.head())
 
 
 
+# Extract the unique values in the 'id_number' column
+unique_ids = df['id_number'].unique()
+
+# Create a new DataFrame that counts the number of occurrences of each unique id_number
+id_counts = pd.DataFrame({'id_number': unique_ids, 'count': df['id_number'].value_counts()})
+
+# Create a histogram of the id_number counts
+fig = go.Figure(data=[go.Bar(x=id_counts['id_number'], y=id_counts['count'])])
+fig.update_layout(title='Distribution of Unique ID Numbers', xaxis_title='ID Number', yaxis_title='Count')
+st.plotly_chart(fig)
+
+
 # Extract the unique values in the 'name' column
 unique_names = df['name'].unique()
 
@@ -62,6 +74,8 @@ fig.update_layout(title='Distribution of Unique Names', xaxis_title='Name', yaxi
 st.plotly_chart(fig)
 
 
+
+
 # Display an overview of the dataset
 st.markdown("## Overview of the dataset")
 grouped_data = df.groupby(['id_number', 'name']).count()
@@ -71,7 +85,7 @@ st.dataframe(grouped_data)
 your_choice = st.selectbox("Clean Data", ("No","Yes"))
 if your_choice=="Yes":
     id_numbers = df['id_number'].unique()
-    selected_ids = st.text_input("Enter your id_number")
+    selected_ids = st.text_input("Enter your id_number: (use comma to delete multiple id_numbers)")
     for selected_id in selected_ids.split(","):
         selected_id=selected_id.strip()
         if selected_id != "":
@@ -94,7 +108,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import json
 import pickle
-
+from sklearn.metrics import classification_report
 def run_model():
     # Split the data into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(df["face_data"], df["id_number"], test_size=0.2, random_state=42)
@@ -111,11 +125,20 @@ def run_model():
     # Calculate the accuracy of the model
     acc = accuracy_score(list(y_test), y_pred)
     #display accuracy
+    
+    report_dict = classification_report(list(y_test), y_pred, output_dict=True)
+    report_df = pd.DataFrame(report_dict).transpose()
+    st.write("Classification Report:")
+    st.dataframe(report_df)
     st.write("Accuracy: ",acc)
     pickle.dump(clf, open('svm_model.pkl', 'wb'))
     st.caption('Model saved as :blue[model.pkl] file')
 if st.button('Run Model'):
-    run_model()
+    unique_ids = df['id_number'].unique()
+    if len(unique_ids) < 2:
+        st.error("Insufficient unique IDs to run the SVM multiclass model. At least two unique IDs are required.")
+    else:
+        run_model()
 
 
 hide_st_style = """
