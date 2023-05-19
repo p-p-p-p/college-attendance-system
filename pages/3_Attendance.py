@@ -208,7 +208,7 @@ def video_capture(subject):
                     name, branch_name, designation, email=info
                     att=mark_attendance(int(person_id), name, branch_name, designation, subject)
                     if att:
-#                         run_attendance_email(id_number=int(person_id), name=name, branch_name=branch_name, designation=designation, email=send_mail, subject=subject)
+                        # run_attendance_email(id_number=int(person_id), name=name, branch_name=branch_name, designation=designation, email=send_mail, subject=subject)
                         run_attendance_email(id_number=int(person_id), name=name, branch_name=branch_name, designation=designation, email=email, subject=subject)
 
                     # print(f"Name: {name}, Branch: {branch_name}, Designation: {designation}")
@@ -338,6 +338,7 @@ def mark_attendance(id_number, name, branch_name, designation, subject):
 
 
 if submit:
+    st.markdown('<p style="color:green">Please wait for a few seconds while the camera is opening...</p>', unsafe_allow_html=True)
     subject=subject.title()
     video_capture(subject)
 
