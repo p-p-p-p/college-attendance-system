@@ -66,6 +66,17 @@ To start the application, execute:
 streamlit run app.py
 ```
 
+### Step 7: Deactivate and Clean Up
+When you're done, deactivate the virtual environment and delete the project folder to clean up:
+```
+deactivate
+cd ..
+rmdir /s /q college-attendance-system
+```
+Or,
+```
+Just Delete the college-attendance-system Folder and clean temp folder on Windows
+```
 ## Generate Unknown face class [unknow.csv](https://raw.githubusercontent.com/p-p-p-p/college-attendance-system/refs/heads/main/unknown.csv)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/p-p-p-p/college-attendance-system/blob/main/unknown_face.ipynb)
 
