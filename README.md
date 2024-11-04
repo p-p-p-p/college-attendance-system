@@ -89,6 +89,11 @@ Or,
 ```
 Just Delete the college-attendance-system Folder and clean temp folder on Windows
 ```
+
+Delete all existing data and start with a clean codebase.
+```
+python clean.py
+```
 ## Generate Unknown face class [unknow.csv](https://raw.githubusercontent.com/p-p-p-p/college-attendance-system/refs/heads/main/unknown.csv)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/p-p-p-p/college-attendance-system/blob/main/unknown_face.ipynb)
 
