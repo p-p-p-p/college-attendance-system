@@ -15,7 +15,7 @@ By leveraging advanced technologies such as streamlit, single-shot detector (SSD
 This application is built using Python 3.10 .
 
 ## Run everything on google colab
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/p-p-p-p/college-attendance-system-/blob/main/college_attendance_system%20.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/p-p-p-p/college-attendance-system/blob/main/college_attendance_system.ipynb)
 
 
 ## Installation Instructions
