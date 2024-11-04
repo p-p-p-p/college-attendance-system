@@ -179,9 +179,10 @@ def fps_display(img,pTime):
     cv2.putText(img, text, (mid_x, 45), font, font_scale,color, thickness)
     return img,pTime
 
-import pickle
-with open("./svm_model.pkl", "rb") as f:
-    svm_model = pickle.load(f)
+
+    
+# with open("./svm_model.pkl", "rb") as f:
+#     svm_model = pickle.load(f)
 
 def video_capture(subject):
     global svm_model
@@ -276,10 +277,7 @@ def convert_string(face_data):
 
 
 
-create_database()
-form = st.form(key='my-form')
-subject = form.text_input('Enter your subject name')
-submit = form.form_submit_button('Submit')
+
 
 
 
@@ -335,15 +333,32 @@ def mark_attendance(id_number, name, branch_name, designation, subject):
     c.close()
     return False
 
+import pickle
+load_model = True
+try:
+    with open("./svm_model.pkl", "rb") as f:
+        svm_model = pickle.load(f)
+except:
+    load_model = False
+submit_disabled = not load_model
+# Inform the user if the model is not loaded
+
+create_database()
+form = st.form(key='my-form')
+subject = form.text_input('Enter your subject name')
 
 
-if submit:
+if not load_model:
+    st.markdown('<p style="color:red">Model not found! Please train the model before proceeding.</p>', unsafe_allow_html=True)
+
+submit = form.form_submit_button('Submit', disabled=submit_disabled)
+
+# If the submit button is clicked and the model is loaded
+if submit and load_model:
     st.markdown('<p style="color:green">Please wait for a few seconds while the camera is opening...</p>', unsafe_allow_html=True)
-    subject=subject.title()
-    video_capture(subject)
+    subject = subject.title()
+    video_capture(subject)  # Call the video capture function
 
-        
-        
 
 
 
