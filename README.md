@@ -66,7 +66,19 @@ To start the application, execute:
 streamlit run app.py
 ```
 
-### Step 7: Deactivate and Clean Up
+
+### Step 7: To Send Confirmation Email to Students and Attendance to Admin
+
+1. Create an account at [Outlook Mail](https://www.microsoft.com/en-in/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook).
+2. Set the username and password in the `.env` file, and specify the admin email:
+
+```plaintext
+email="fakemail@outlook.com"
+password="sadfkkjkj124845545496"
+admin_mail="fake_Admin@gmail.com"
+```
+
+### Step 8: Deactivate and Clean Up
 When you're done, deactivate the virtual environment and delete the project folder to clean up:
 ```
 deactivate
