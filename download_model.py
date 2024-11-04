@@ -18,4 +18,4 @@ if embedding:
 # cv2.imshow("img",img)
 # cv2.waitKey(0)
 if len(facial_data)>=1:
-    print("Successfully Download Facenet,ssd")
+    print("Successfully downloaded FaceNet and SSD.")
