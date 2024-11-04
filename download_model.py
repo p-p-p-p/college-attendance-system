@@ -14,6 +14,8 @@ if embedding:
         faces.append((x1, y1, x2, y2 ))
         facial_data.append(embedding[i]['embedding'])
 
-print(faces,facial_data)
-cv2.imshow("img",img)
-cv2.waitKey(0)
+# print(faces,facial_data)
+# cv2.imshow("img",img)
+# cv2.waitKey(0)
+if len(facial_data)>=1:
+    print("Successfully Download Facenet,ssd")
