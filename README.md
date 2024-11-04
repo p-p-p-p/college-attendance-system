@@ -17,32 +17,59 @@ This application is built using Python 3.10 .
 ## Run everything on google colab
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/p-p-p-p/college-attendance-system-/blob/main/college_attendance_system%20.ipynb)
 
-## How to install 
-####  Step 1: Git clone this repository
-####  Step 2: cd ./college-attendance-system/
-####  Step 3: Open terminal and copy paste this line
+
+## Installation Instructions
+
+### Step 1: Clone the Repository
+First, clone this repository to your local machine using Git:
+```bash
+git clone https://github.com/p-p-p-p/college-attendance-system.git
 ```
+
+### Step 2: Navigate to the Project Directory
+Change into the project directory:
+```bash
+cd college-attendance-system/
+```
+
+### Step 3: Set Up a Virtual Environment
+Create a virtual environment to manage dependencies:
+```bash
+python -m venv myenv
+```
+
+#### Activate the Virtual Environment
+- **For Windows:**
+  ```bash
+  myenv\Scripts\activate
+  ```
+- **For Linux/Mac:**
+  ```bash
+  source myenv/bin/activate
+  ```
+
+### Step 4: Install Required Packages
+Install the necessary dependencies from `requirements.txt`:
+```bash
 pip install -r requirements.txt
 ```
-or
-```
-Run install.py
-```
-annd
-```
-rull download.py
+
+### Step 5: Download the Model
+Run the following command to download the required model:
+```bash
+python download_model.py
 ```
 
-####  Step 4: Run app.py
-```
+### Step 6: Run the Application
+To start the application, execute:
+```bash
 streamlit run app.py
 ```
-### Run run.py
 
-## Generate Unknown face class
+## Generate Unknown face class [unknow.csv](https://raw.githubusercontent.com/p-p-p-p/college-attendance-system/refs/heads/main/unknown.csv)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/p-p-p-p/college-attendance-system/blob/main/unknown_face.ipynb)
 
-## Download unknow.csv file
+
 
 
 ## Homepage
